@@ -8,6 +8,8 @@ from sql_requests import *
 import csv
 
 
+TEST_DATA = Path("../../datasets/dns_test_data")
+
 def timer(func):
     """
     Measuring execution time decorator
@@ -53,7 +55,7 @@ def fill_table(table, data=None) -> None:
     if data:
         source = data
     else:
-        csv_file = Path("test_data").joinpath(f"t_{table.__tablename__}.csv")
+        csv_file = TEST_DATA.joinpath(f"t_{table.__tablename__}.csv")
         source = get_csv_lines(csv_file)
     for line in source:
         dict_line = table(**dict(zip(columns, line)))
