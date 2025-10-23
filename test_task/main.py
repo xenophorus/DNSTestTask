@@ -27,7 +27,7 @@ def timer(func):
     return wrapper
 
 
-def get_csv_lines(file) -> list:
+def get_csv_lines(file):
     with open(file, 'r', encoding="utf-8") as f:
         reader = csv.reader(f)
         for row in reader:

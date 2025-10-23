@@ -17,7 +17,7 @@ class Settings:
         return self.BATCH_SIZE
 
     def get_url(self):
-        return f"postgresql+psycopg://{self.DB_USER}:{self.DB_PASSWORD}@{self.DB_HOST}:5432/{self.DB_NAME}"
+        return f"postgresql://{self.DB_USER}:{self.DB_PASSWORD}@{self.DB_HOST}:5432/{self.DB_NAME}"
 
 
 settings = Settings()
